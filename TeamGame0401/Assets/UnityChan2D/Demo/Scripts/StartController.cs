@@ -12,6 +12,7 @@ public class StartController : MonoBehaviour
 
     void Update()
     {
+        Debug.Log("sdss");
         if (Input.GetKeyDown(enter))
         {
             StartCoroutine(LoadStage());

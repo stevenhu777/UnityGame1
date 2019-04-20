@@ -4,16 +4,26 @@ using UnityEngine;
 
 public class ItemMove : MonoBehaviour
 {
-    private Vector3 m_StartPoint;    //投擲開始位置
-    private  Vector3 m_EndPoint;      //投擲終了位置
-    private  Vector3 m_ContorlPoint;
+    private Vector3 m_StartPoint;    　//投擲開始位置
+
+    private Vector3 m_EndPoint;      //投擲終了位置
+
+    private Vector3 m_ContorlPoint;　//投擲コントロールポイント
+
     private float speed;             //スピード
+
     private float m_MaxDistance;     //投擲の最大の高さ
-    private float angle;
+
+    private float angle;　　　　　　　
+
     private float m_StartTime;       //投げ飛ばす時間
-    private bool isAttackStart=false;
-    private bool isAttackFinish;
-    float x;
+
+    private bool isAttackStart = false;　　//攻撃するかどうか
+
+    private bool isAttackFinish;　　　　　//攻撃終わりを判定
+
+    float x;
+
     float y;
     private static ItemMove instance;
     public static ItemMove Instance
@@ -32,12 +42,22 @@ public class ItemMove : MonoBehaviour
     {
         Instance = this;
     }
+    /// <summary>
+    /// アイテムの位置を設定
+    /// </summary>
+    /// <param name="position"></param>
     public void SetPosition(Vector3 position)
     {
         transform.position = position;
         //Debug.Log(m_StartPoint);
     }
-
+    /// <summary>
+    ///　渡されたデータをアイテムに設定
+    /// </summary>
+    /// <param name="startPoint"></param>
+    /// <param name="endPoint"></param>
+    /// <param name="speed"></param>
+    /// <param name="hight"></param>
     public void SetAttackData(Vector3 startPoint,Vector3 endPoint,float speed,float hight)
     {
         m_StartPoint = startPoint;
@@ -47,6 +67,10 @@ public class ItemMove : MonoBehaviour
 
         SetContorlPoint();      
     }
+
+    /// <summary>
+    /// データによって投擲コントロールポイントを計算
+    /// </summary>
     public void SetContorlPoint()
     {
         Vector3 distanceVec =new Vector3( Mathf.Abs(m_EndPoint.x - m_StartPoint.x), Mathf.Abs(m_EndPoint.y - m_StartPoint.y),0);

@@ -8,6 +8,7 @@ TagManager:
   - Coin
   - Stone
   - Item1
+  - Block
   layers:
   - Default
   - TransparentFX

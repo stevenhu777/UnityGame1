@@ -55,8 +55,10 @@ public class CameraMove : MonoBehaviour
     //private float lastCameraScale;
 
     private float currentCameraScale;
+    
     public void Awake()
     {
+         
         //プレイヤーの位置情報を取得
         //player = GameObject.FindGameObjectWithTag("Player").transform;
         //カメラを取得

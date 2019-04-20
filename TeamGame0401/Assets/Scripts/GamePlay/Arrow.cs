@@ -5,10 +5,5 @@ using UnityEngine;
 public class Arrow : MonoBehaviour
 {
     //public GameObject arrowPosition;
-    private void Update()
-    {
-
-
-    }
     
 }
