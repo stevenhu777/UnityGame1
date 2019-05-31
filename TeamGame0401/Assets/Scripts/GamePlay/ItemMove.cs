@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ItemMove : MonoBehaviour
 {
+
+    public Vector3 positionPlus;
     private Vector3 m_StartPoint;    　//投擲開始位置
 
     private Vector3 m_EndPoint;      //投擲終了位置
@@ -61,7 +63,8 @@ public class ItemMove : MonoBehaviour
     public void SetAttackData(Vector3 startPoint,Vector3 endPoint,float speed,float hight)
     {
         m_StartPoint = startPoint;
-        m_EndPoint =endPoint;
+        //m_EndPoint = endPoint;
+        m_EndPoint = new Vector3(1,1,0);
         this.speed = speed;
         m_MaxDistance = hight;
 
@@ -97,8 +100,8 @@ public class ItemMove : MonoBehaviour
             {
                 if (transform.position.x<=m_EndPoint.x)
                 {
-                    Destroy(this.gameObject);
-                    return;
+                    //Destroy(this.gameObject);
+                   // return;
 
                 }
             }
@@ -106,8 +109,8 @@ public class ItemMove : MonoBehaviour
             {
                 if (transform.position.x>=m_EndPoint.x)
                 {
-                    Destroy(this.gameObject);
-                    return;
+                   // Destroy(this.gameObject);
+                   // return;
                 }
             }       
             GeneratingCurve();    

@@ -89,7 +89,7 @@ public class PlayerMove : MonoBehaviour
                     isSetStonePosition = false;
                     AttackStone();
                 }
-                else
+                else if(currentCol.gameObject.tag=="Item1")
                 {
                     //石ではないときは、アイテム攻撃を初めて
                     isSetItemPosition = false;
@@ -178,7 +178,6 @@ public class PlayerMove : MonoBehaviour
         if (arrowRotationTra==null&&arrowGob==null)
         {
             return;
-
         }
         //コントローラーのスティック方向によって、矢印の方向を設定
         if (x==0&&y==0)
@@ -275,7 +274,7 @@ public class PlayerMove : MonoBehaviour
     //プレイヤーのあたり判定
     private void OnTriggerStay2D(Collider2D col)
     {
-        if (currentCol==null)
+        if (currentCol == null)
         {
             switch (col.gameObject.tag)
             {
@@ -290,7 +289,7 @@ public class PlayerMove : MonoBehaviour
                     break;
                 //石に衝突するとき
                 case "Stone":
-                   // Debug.Log("dsdd");
+                    // Debug.Log("dsdd");
                     if (Input.GetKeyDown(KeyCode.JoystickButton4))
                     {
                         //BuildManager.Instance.DataReturn(col, this.gameObject);
@@ -302,7 +301,5 @@ public class PlayerMove : MonoBehaviour
                     break;
             }
         }
-       
-        
     }
 }
